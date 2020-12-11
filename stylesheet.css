@@ -11,105 +11,41 @@ body{
 *{
   margin: 0;
 }
-
-/* LOAD */
-
-.load{
-  background-color: #333;
-  text-align: center;
-  width:100%;
-  height:100vh;
-  position: relative;
-  position: fixed;
-  top:0;
-  z-index:1000;
-}
-
-.container {
-  position: absolute;
-  top:50%;
-  left:50%;
-  transform: translateY(-50%) translateX(-50%);
-  -webkit-transform: translateY(-50%) translateX(-50%);
-  max-width: 1000px;
-  margin: auto;
-  display: flex;
-  padding: 0 20px;
-  justify-content: space-around;
-}
-
-.block {
-  width: 200px;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.loading {
-  width: 45px;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.circle {
-  width: 15px;
-  height: 15px;
-  background-color: #ffffff;
-  margin: auto;
-  animation-name: loading;
-  animation-duration: 1.5s;
-  animation-iteration-count: infinite;
-}
-.circle:nth-child(1) {
-  animation-delay: 0.2s;
-}
-.circle:nth-child(2) {
-  animation-delay: 0.3s;
-}
-.circle:nth-child(3) {
-  animation-delay: 0.4s;
-}
-.circle:nth-child(4) {
-  animation-delay: 0.1s;
-}
-.circle:nth-child(5) {
-  animation-delay: 0.2s;
-}
-.circle:nth-child(6) {
-  animation-delay: 0.3s;
-}
-.circle:nth-child(7) {
-  animation-delay: 0s;
-}
-.circle:nth-child(8) {
-  animation-delay: 0.1s;
-}
-.circle:nth-child(9) {
-  animation-delay: 0.2s;
-}
-
-@keyframes loading {
-  20% {
-    transform: scale(0.1);
-  }
-  40% {
-    transform: scale(1);
-  }
+h1 span{
+  color:red;
 }
 
 
 /* HEADER */
-
 header{
-  width:100%;
+  width:95%;
+  padding:0 2.5%;
   max-width: 100%;
+  height:80px;
   display: flex;
   align-items: center;
-  position: fixed;
-  z-index: 500;
+  background-color:#DFDEDE;
+  justify-content: space-between;
 }
-header a{
+header h1{
+  font-family: serif;
+  color:black;
+}
+header h1:nth-child(1){
+  font-size: 140px;
+  color:white;
+  border-bottom: white solid 1px;
+  height:180px;
+}
+
+/* JUMP */
+.jump{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  z-index: 900;
+}
+.jump a{
   text-decoration: none;
   color: #ffffff;
   position: relative;
@@ -122,67 +58,33 @@ header a{
   transition: .5s;
   margin-top: 20px;
 }
-header a:hover {
+.jump a:hover {
   background: #f72626;
 }
 
 
-/* TOP-WRAPPER */
-
-.top-wrapper{
-  width:100%;
-  max-width:100%;
-  background-image: url(pic/back.png);
-  background-size: cover;
-  text-align: center;
-}
-.top-wrapper h1{
-  color:white;
-  padding: 200px 0 200px;
-  background-color: black;
-  font-size: 50px;
-  font-family:serif;
-  opacity: 0.6;
-}
-.top-wrapper h1 span,
-footer h1 span{
-  color:red;
-}
-
-
-/* SIGN */
-.sign{
-  width:100%;
-  text-align: center;
-}
-.sign p{
-  font-size: 50px;
-}
-
-
-
-/* ARTICLE */
+/* MENU */
 .menu{
-  width:96%;
-  padding:0 2%;
-  margin-top: 10px;
+  width:90%;
+  padding:0 5%;
+  margin-top: 100px;
   display: flex;
   flex-wrap: wrap;
 }
 .menu a{
-  width:50%;
-  margin:10px 0;
+  width:49%;
+  margin:10px 0.5%;
   padding:0;
   display: inline-block;
   text-decoration: none;
   background-size: cover;
   background-position: center;
-  clip-path: polygon(10% 0, 100% 0%, 90% 100%, 0% 100%);
   transition: 1s;
 }
 .menu a:hover{
   transform: translateY(-10px);
   transform: scale(1.1);
+  z-index: 1000;
 }
 .article{
   width:100%;
@@ -196,38 +98,22 @@ footer h1 span{
   font-size: 32px;
   padding:50px 0 50px 0;
 }
-
-/* pic */
 .menu a:nth-child(1){
-  background-image: url(pic/si.png);
+  background-image: url(pic/na.png);
 }
 .menu a:nth-child(2){
-  background-image: url(pic/re.png);
+  background-image: url(pic/bu.png);
 }
 .menu a:nth-child(3){
-  background-image: url(pic/sh.png);
+  background-image: url(pic/ar.png);
 }
 .menu a:nth-child(4){
-  background-image: url(pic/da.png);
+  background-image: url(pic/in.png);
 }
 .menu a:nth-child(5){
-  background-image: url(pic/ca.png);
+  background-image: url(pic/ac.png);
 }
-.menu a:nth-child(6){
-  background-image: url(pic/we.png);
-}
-.menu a:nth-child(7){
-  background-image: url(pic/gr.png);
-}
-.menu a:nth-child(8){
-  background-image: url(pic/sn.png);
-}
-.menu a:nth-child(9){
-  background-image: url(pic/ek.png);
-}
-.menu a:nth-child(10){
-  background-image: url(pic/to.png);
-}
+
 
 /* BUTTON */
 
@@ -280,6 +166,7 @@ footer h1 span{
   transition: all .3s;
 }
 
+
 /* FOOTER */
 footer{
   text-align: center;
@@ -317,12 +204,3 @@ footer p{
   font-size: 12px;
   color:white;
 }
-
-
-
-
-
-
-
-
-
